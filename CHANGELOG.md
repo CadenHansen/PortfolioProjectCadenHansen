@@ -77,7 +77,13 @@ the following form: YYYY.0M.0D.
 
 ## [2024.10.1]
 
-- Designed a proof of concept for Circuit component
+### Added
+
+- Designed a proof of concept for circuit component
+
+### Updated
+
+- Finished Example design for circuit component
 
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
