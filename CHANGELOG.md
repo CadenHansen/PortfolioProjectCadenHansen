@@ -67,6 +67,18 @@ the following form: YYYY.0M.0D.
 - Created initial drafts of the six portfolio assessments
 - Added READMEs to key folders like `test` and `lib` to explain their purpose
 
+## [2024.09.11]
+
+### Added
+
+- Designed Location Matrix component
+- Designed LiftPower component
+- Designed Circuit component
+
+## [2024.10.1]
+
+- Designed a proof of concept for Circuit component
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07

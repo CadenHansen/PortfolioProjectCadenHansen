@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Caden Hansen
+- **Dot Number**: 645
+- **Due Date**: 9/13/24
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,23 +90,27 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My primary career goal is to do something that bridges software and hardware. I
+have always had somewhat of an obsession with computers and how they run, but I
+also just enjoy programming. I am unsure of what exactly that leads to.
+
+My hobbies are primarily playing video games and collecting. I have a collection
+of video games, I like having various types of hardware to play them as well. I
+also like to collect Manga and figures. I also enjoy weightlifting.
+
+I also love Hockey and Football. I watch a lot of games during their respective
+seasons. For Football I like the Cincinatti Bengals, I sort of like the Lions &
+Saints as well but not as much. For Hockey Huge Red Wings & Blue Jackets fan.
+You'll see me wear a lot of merch for random teams tho.
+
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -192,70 +188,89 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `Location Matrix`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    Create Object Matrixes with Rows and Columns, object types determined by
+    Users. Idea is to be used like a bookshelf location identifer. You can fill
+    out a bookshelf with the data type and it will be able to find it and information about it.
+    - **Kernel Methods**:
+    - `boolean inMatrix(T object)` reports whether object is within Matrix
+    - `void remove(T object)` removes object from its spot within Matrix
+    - `void getColumn(T object)` gets objects Column
+    - `void getRow(T object)` gets objects Row
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void add(int Row, int Column, T object)` adds object to specified location on Matrix
+    - `String toString()`
+    - `T replaceValue(int row, int col, T newObject)` replaces object in spot with new one, returns replaced object
+    - `void addRow()` adds extra row at the bottom of shelf
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, object can be modified
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Likely List or one of the other databases
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, replaceValue can use getRow and getCol to replace current position
 
-
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `LiftPower`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    Does the math on how much you are lifting by incrementing for you by the typical quanitities.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `int convertToKG()` - converts current weight to Kilograms instead of pounds
+    - `void reduceWeight(int x)` - lowers weight by specified amount
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void fullPlate()` adds 2 45s to current weight
+    - `void twenyFivePlate()` adds 2 25s to current weight
+    - `void inputSpecial(int x)` allows you to define a value to increase weight by
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, the whole idea is for this to be easily modified numbers to specifically typical weightlifting, Math on quantity of 45lbs
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Potentially but probably not, just increment by 45 and smaller numbers
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know at this point. I need to think of better methods.
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `Circuit`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Make a simple Circuit in code, able to adjust voltage along with other
+    values of parts of the circuit. Able to add special parts and adjust their
+    values. Those parts can be Resistors, Diodes, More Forms of Voltage.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `int getVoltage(int pos1, int pos2)` returns voltage between components
+    - `int getCurrent(int pos1, int pos2)` returns current between components
+    - `int getComponent(int pos)` returns component identification as an integer
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `void addResistor(int resistance value, int position)` adds a resistor to
+    the curcuit
+    - `void addBattery(int voltage, int position)` adds source of voltage to the
+    curcuit
+    - `void addWire(int position)` adds wire to circuit
+]  - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes,you should be able to copy circuits and modify them
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes I expect it to be an array of Maps
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know yet but it should be able to after I change some things 
+      and flesh out the Component
 
 ## Post-Assignment
 
@@ -303,8 +318,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -313,11 +326,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
