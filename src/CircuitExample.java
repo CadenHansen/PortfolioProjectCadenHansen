@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author Caden Hansen
  */
-public final class Circuit {
+public final class CircuitExample {
 
     /**
      * Instance variables (fields)
@@ -36,7 +36,7 @@ public final class Circuit {
     /**
      * Default constructor.
      */
-    private Circuit() {
+    private CircuitExample() {
         //default voltage
         this.voltage = 5;
         this.circuit.add(0, this.voltage);
@@ -51,7 +51,7 @@ public final class Circuit {
      *
      *            Full argument constructor.
      */
-    private Circuit(ArrayList<Integer> circuitList, int voltageValue,
+    private CircuitExample(ArrayList<Integer> circuitList, int voltageValue,
             ArrayList<ArrayList<Integer>> parallelArray) {
         this.circuit = circuitList;
         this.voltage = voltageValue;
@@ -192,9 +192,9 @@ public final class Circuit {
         forTestingParallels.add(forTestingCircuit);
         forTestingParallels.add(forOtherCircuit);
 
-        Circuit testCircuit = new Circuit(forTestingCircuit, 10,
+        CircuitExample testCircuit = new CircuitExample(forTestingCircuit, 10,
                 forTestingParallels);
-        Circuit otherCircuit = new Circuit(forOtherCircuit, 10,
+        CircuitExample otherCircuit = new CircuitExample(forOtherCircuit, 10,
                 forTestingParallels);
         testCircuit.addWire(10);
         testCircuit.addResistor(40, 3);
