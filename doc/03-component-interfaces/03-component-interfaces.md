@@ -114,7 +114,13 @@ do good work.
 
 ## Pre-Assignment Tasks
 
-
+>Edits I made between part 2 and 3
+>I chose to make all of the over the entire circuit kernel due to a few key methods requiring their information.
+>I also chose to add a detector for resistors since it would be repeated code within the other methods.
+>A remove object method allowing you to convert an object to just a wire representation.
+>Remaining methods are all secondary methods, I chose to include a comparator emulator,
+>this method will stick two circuits into a comparator, higher voltage in minus or plus
+>will be output voltage just like a real life comparator.
 
 Before you start crafting your interfaces, you must demonstrate that you know
 how everything fits in the discipline hierarchy. You have seen many of these

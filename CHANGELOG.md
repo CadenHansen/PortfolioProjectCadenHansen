@@ -85,11 +85,15 @@ the following form: YYYY.0M.0D.
 
 - Finished Example design for circuit component
 
-## [2024.10.14]
+## [2024.10.16]
 
 ## Added
 
 Designed enhanced and kernel interfaces for circuit component
+
+## Updated
+
+Added methods to kernel and secondary for circuit component
 
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07

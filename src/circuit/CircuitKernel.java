@@ -5,7 +5,7 @@ import components.standard.Standard;
 /**
  * Circuit kernel component with primary methods.
  */
-public interface CircuitKernel extends Standard<circuit>{
+public interface CircuitKernel extends Standard<Circuit> {
 
     /**
      * Reports total {@Code this} current.
@@ -27,7 +27,7 @@ public interface CircuitKernel extends Standard<circuit>{
      * Reports whether current object in circuit is a resistor.
      *
      * @param x
-     *        location within circuit being checked.
+     *            location within circuit being checked.
      *
      * @return true or false if object is a resistor.
      * @ensures {@Code has the ability to be a resistor}
