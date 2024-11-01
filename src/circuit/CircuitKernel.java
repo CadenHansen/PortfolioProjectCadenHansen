@@ -24,6 +24,12 @@ public interface CircuitKernel extends Standard<Circuit> {
     double getTotalResistance();
 
     /**
+     *
+     * @return
+     */
+    double getStarterVoltage();
+
+    /**
      * Reports whether current object in circuit is a resistor.
      *
      * @param x
@@ -33,5 +39,29 @@ public interface CircuitKernel extends Standard<Circuit> {
      * @ensures {@Code has the ability to be a resistor}
      */
     boolean identifyResistor(int x);
+
+    /**
+     *
+     * @param x
+     * @return
+     */
+    int getObject(int x);
+
+    /**
+     * Increments total circuit length.
+     *
+     * @updates this
+     * @ensures this = #this + wire
+     */
+    void addWire();
+
+    /**
+     *
+     * @param x
+     * @return
+     */
+    void setObject(int x, int y);
+
+    int length();
 
 }

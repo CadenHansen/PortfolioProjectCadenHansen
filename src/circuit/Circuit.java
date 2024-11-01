@@ -16,7 +16,7 @@ public interface Circuit extends CircuitKernel {
      * @return the value
      * @ensures {@Code can be used to find a voltage over a voltager divider}
      */
-    double voltageDivide(int x, int y);
+    double voltageDivide(Circuit x, Circuit y);
 
     /**
      * Reports voltage between x and y.
@@ -33,22 +33,17 @@ public interface Circuit extends CircuitKernel {
     /**
      * Increments total circuit length.
      *
-     * @updates this
-     * @ensures this = #this + wire
-     */
-    void addWire();
-
-    /**
-     * Increments total circuit length.
-     *
      * @param x
      *            ohms of resistor
+     *
+     * @param y
+     *            location on circuit.
      *
      * @updates this
      * @requires x > 10
      * @ensures this = #this
      */
-    void addResistor(int x);
+    void addResistor(int x, int y);
 
     /**
      * Removes object at position x.
@@ -76,6 +71,28 @@ public interface Circuit extends CircuitKernel {
      * @return value of voltage out
      * @ensures {@Code can be used to obtain a voltage out}
      */
-    double emulateComparator(int x, int y, double voltage1, double voltage2);
+    double emulateComparator(Circuit x, Circuit y, double voltage1,
+            double voltage2);
+
+    /**
+     * Checks if this and x are equal to eachother.
+     *
+     * @param x
+     *            Circuit this is being compared to
+     *
+     * @ensures this = this
+     * @return true/false depending on if equal
+     */
+    boolean equals(Circuit x);
+
+    /**
+     * Creates a string representation of this.
+     *
+     *
+     * @ensures this = this
+     * @return this as a string
+     */
+    @Override
+    String toString();
 
 }
