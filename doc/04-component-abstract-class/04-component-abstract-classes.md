@@ -1,8 +1,8 @@
 # Portfolio Part 4: Abstract Class
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Caden Hansen
+- **Dot Number**: 645
+- **Due Date**: 11/1/24
 
 ## Assignment Overview
 
@@ -46,8 +46,6 @@ access to the representation, so you must also implement them using the kernel
 methods only.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -106,6 +104,13 @@ do good work.
    If there is no method available to check the precondition, it must be added
    to the kernel.
 
+   > List of Changes
+   > 1. Moved addwire and identify resistor to kernel
+   > 2. added methods for starter voltage, getObject, and setObject
+   > 3. added a length method to kernel
+   > 4. added object methods equals and toString
+
+
 ## Pre-Assignment Tasks
 
 > To start making your abstract class, make a branch off of main in your new
@@ -128,8 +133,6 @@ do good work.
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
-
 ## Assignment Tasks
 
 Your primary task for this assignment is to create an abstract class that falls
@@ -148,8 +151,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -183,8 +184,6 @@ like to accomplish that, you will need to make GitHub releases after each pull
 request merge (or at least tag your commits). This is not required.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 Assuming that your project is in a GitHub repo somewhere and your changes are on
 a proof-of-concept branch, then what we'll want you to do is create a pull
