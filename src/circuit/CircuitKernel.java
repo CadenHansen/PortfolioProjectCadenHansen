@@ -24,8 +24,10 @@ public interface CircuitKernel extends Standard<Circuit> {
     double getTotalResistance();
 
     /**
+     * Reports primary voltage source in circuit.
      *
-     * @return
+     * @return beginning voltage
+     * @ensures {@Code this can be used to find starting voltage}
      */
     double getStarterVoltage();
 
