@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Caden Hansen
+- **Dot Number**: 645
+- **Due Date**: 11/Date/24
 
 ## Assignment Overview
 
@@ -112,7 +112,9 @@ do good work.
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+ArrayList of Integers, This representation is easy to mmanipulate in the way that I would like
+my component to do. Its easy to increase the length of as well, compared to a normal
+array. ArrayList methods like add and set make it easy to use.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
