@@ -34,36 +34,48 @@ public interface CircuitKernel extends Standard<Circuit> {
     /**
      * Reports whether current object in circuit is a resistor.
      *
-     * @param x
+     * @param pos
      *            location within circuit being checked.
      *
      * @return true or false if object is a resistor.
      * @ensures {@Code has the ability to be a resistor}
      */
-    boolean identifyResistor(int x);
+    boolean identifyResistor(int pos);
 
     /**
      *
-     * @param x
-     * @return
+     * @param pos
+     *            location of object
+     * @return objectValue
      */
-    int getObject(int x);
+    int getObject(int pos);
 
     /**
      * Increments total circuit length.
      *
+     * @param quantity
+     *            number of wires to add to circuit;
+     *
      * @updates this
      * @ensures this = #this + wire
      */
-    void addWire();
+    void addWire(int quantity);
 
     /**
      *
-     * @param x
-     * @return
+     * @param pos
+     *            location of object
+     * @param value
+     *            value being set at location
+     *
      */
-    void setObject(int x, int y);
+    void setObject(int pos, int value);
 
+    /**
+     * Gets total length.
+     *
+     * @return length of circuit
+     */
     int length();
 
 }

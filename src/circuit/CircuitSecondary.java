@@ -163,6 +163,11 @@ public abstract class CircuitSecondary implements Circuit {
         for (int i = 0; i < this.length(); i++) {
 
             objectAsString += this.getObject(i);
+            if (i == this.length() - 1) {
+                objectAsString += "-END";
+            } else {
+                objectAsString += "-";
+            }
 
         }
 

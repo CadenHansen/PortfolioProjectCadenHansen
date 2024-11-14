@@ -32,19 +32,13 @@ public class Circuit1 extends CircuitSecondary {
     private int voltage;
 
     /**
-     * starting length for circuit.
-     */
-    private int length;
-
-    /**
      *
      */
     private void createNewRep() {
 
-        this.rep = new ArrayList<>();
+        this.rep = new ArrayList<Integer>();
         this.voltage = 5;
-        this.rep.set(0, 5);
-        this.length = 1;
+        this.rep.add(5);
 
     }
 
@@ -60,18 +54,15 @@ public class Circuit1 extends CircuitSecondary {
     /**
      *
      * @param voltage
+     *            voltage
      *
      *            Full argument constructor.
      *
      */
-    public Circuit1(int voltage, int length) {
+    public Circuit1(int voltage) {
 
         this.createNewRep();
         this.voltage = voltage;
-        for (int i = 0; i < length; i++) {
-            this.rep.add(1);
-        }
-        this.length = length;
 
     }
 
@@ -150,15 +141,17 @@ public class Circuit1 extends CircuitSecondary {
     }
 
     @Override
-    public void addWire() {
+    public void addWire(int quantity) {
 
-        this.rep.set(this.length() + 1, 1);
-        this.length++;
+        for (int i = 0; i < quantity; i++) {
+            this.rep.add(1);
+        }
 
     }
 
     @Override
     public void setObject(int pos, int value) {
+        assert value < this.length();
 
         this.rep.set(pos, value);
 
@@ -167,7 +160,7 @@ public class Circuit1 extends CircuitSecondary {
     @Override
     public int length() {
 
-        return this.length;
+        return this.rep.size();
 
     }
 
