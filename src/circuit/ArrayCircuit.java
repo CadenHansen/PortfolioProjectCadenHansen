@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @author Caden Hansen
  *
  */
-public class Circuit1 extends CircuitSecondary {
+public class ArrayCircuit extends CircuitSecondary {
 
     /**
      * Representation of {@code this}.
@@ -45,7 +45,7 @@ public class Circuit1 extends CircuitSecondary {
     /**
      * Default constructor.
      */
-    public Circuit1() {
+    public ArrayCircuit() {
 
         this.createNewRep();
 
@@ -59,8 +59,8 @@ public class Circuit1 extends CircuitSecondary {
      *            Full argument constructor.
      *
      */
-    public Circuit1(int voltage) {
-
+    public ArrayCircuit(int voltage) {
+        assert voltage > 0 : "voltage must be greater than 0";
         this.createNewRep();
         this.voltage = voltage;
 
@@ -80,8 +80,9 @@ public class Circuit1 extends CircuitSecondary {
     @Override
     public final void transferFrom(Circuit source) {
 
-        Circuit1 localValue = (Circuit1) source;
+        ArrayCircuit localValue = (ArrayCircuit) source;
         this.rep = localValue.rep;
+        this.voltage = localValue.voltage;
         localValue.createNewRep();
 
     }
@@ -120,7 +121,7 @@ public class Circuit1 extends CircuitSecondary {
     }
 
     @Override
-    public double getStarterVoltage() {
+    public int getStarterVoltage() {
 
         return this.voltage;
 

@@ -29,7 +29,7 @@ public interface CircuitKernel extends Standard<Circuit> {
      * @return beginning voltage
      * @ensures {@Code this can be used to find starting voltage}
      */
-    double getStarterVoltage();
+    int getStarterVoltage();
 
     /**
      * Reports whether current object in circuit is a resistor.
