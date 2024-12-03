@@ -1,0 +1,24 @@
+import circuit.ArrayCircuit;
+
+/**
+ * This exmample use case shows how a circuit object can be modified to implement
+ * a step-up transformer, which is the transformer that takes power from a factory and
+ * "steps it up" in order to travel long distances over power lines
+ */
+public class CircuitExampleTransformer {
+
+
+
+
+public static void stepUp() {
+
+
+
+}
+
+public static void main(String[] args) {
+
+
+
+    }
+}

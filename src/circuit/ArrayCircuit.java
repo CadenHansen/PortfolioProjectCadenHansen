@@ -152,7 +152,7 @@ public class ArrayCircuit extends CircuitSecondary {
 
     @Override
     public void setObject(int pos, int value) {
-        assert value < this.length();
+        assert pos < this.length();
 
         this.rep.set(pos, value);
 
