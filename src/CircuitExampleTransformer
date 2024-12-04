@@ -2,20 +2,26 @@ import circuit.ArrayCircuit;
 
 /**
  * This exmample use case shows how a circuit object can be modified to implement
- * a step-up transformer, which is the transformer that takes power from a factory and
- * "steps it up" in order to travel long distances over power lines
+ * two transformer types, which is the transformer that takes power from a factory and
+ * "steps it up" in order to travel long distances over power lines, and the transformer that
+ *  steps it down for house and normal use
  */
 public class CircuitExampleTransformer {
 
 
 
 
-public static void stepUp() {
+public static void stepUp(ArrayCircuit x) {
 
 
 
 }
 
+public static void stepDown(ArrayCircuit x) {
+
+ 
+
+}
 public static void main(String[] args) {
 
 
