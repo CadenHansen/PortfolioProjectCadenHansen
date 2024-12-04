@@ -1,4 +1,5 @@
 import circuit.ArrayCircuit;
+import java.util.Scanner;
 
 /**
  * This exmample use case shows how a circuit object can be modified to implement
@@ -19,11 +20,21 @@ public static void stepUp(ArrayCircuit x) {
 
 public static void stepDown(ArrayCircuit x) {
 
- 
+
 
 }
 public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Please Enter a starting voltage: ");
+        String volts = in.println();
+        int sVolt = Integer.parseInt(volts);
 
 
+        ArrayCircuit powerLine = new ArrayCircuit(sVolt);
+
+        System.out.print(sVolt);
+
+
+        in.close();
     }
 }
