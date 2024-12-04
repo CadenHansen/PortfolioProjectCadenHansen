@@ -20,7 +20,7 @@ public abstract class CircuitSecondary implements Circuit {
     public double voltageDivide(Circuit x, Circuit y) {
 
         double resistance1 = x.getTotalResistance();
-        double resistance2 = x.getTotalResistance();
+        double resistance2 = y.getTotalResistance();
 
         return this.getStarterVoltage()
                 * (resistance1 / (resistance1 + resistance2));
@@ -39,6 +39,7 @@ public abstract class CircuitSecondary implements Circuit {
      */
     @Override
     public double getVoltage(int x, int y) {
+        assert x > 0 && y < this.length() : "No Objects at Specified Points";
 
         double voltage = this.getStarterVoltage();
         double current = this.getTotalCurrent();
@@ -46,7 +47,7 @@ public abstract class CircuitSecondary implements Circuit {
 
         for (int i = x; x < y; i++) {
 
-            if (resistorsChecked > 1) {
+            if (resistorsChecked > 1 && i < this.length()) {
                 current = voltage / this.getObject(i);
             }
 
@@ -109,6 +110,8 @@ public abstract class CircuitSecondary implements Circuit {
     @Override
     public double emulateComparator(Circuit x, Circuit y, double voltage1,
             double voltage2) {
+        assert x.getStarterVoltage() != y
+                .getStarterVoltage() : "Comparators with same input cause hysteresis";
 
         double voltage = 0;
 
@@ -125,26 +128,31 @@ public abstract class CircuitSecondary implements Circuit {
     /**
      * Checks if this and x are equal to eachother.
      *
-     * @param x
+     * @param o
      *            Circuit this is being compared to
      *
      * @ensures this = this
      * @return true/false depending on if equal
      */
     @Override
-    public boolean equals(Circuit x) {
+    public boolean equals(Object o) {
 
-        boolean equal = true;
-
-        for (int i = 0; i < this.length(); i++) {
-
-            if (this.getObject(i) != x.getObject(i)) {
-                equal = false;
-            }
-
+        if (o == null) {
+            return false;
         }
-
-        return equal;
+        if (!(o instanceof Circuit)) {
+            return false;
+        }
+        Circuit x = (Circuit) o;
+        if (this.length() != x.length()) {
+            return false;
+        }
+        for (int i = 0; i < this.length(); i++) {
+            if (this.getObject(i) != x.getObject(i)) {
+                return false;
+            }
+        }
+        return true;
 
     }
 

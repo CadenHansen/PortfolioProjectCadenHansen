@@ -63,7 +63,25 @@ public class ArrayCircuit extends CircuitSecondary {
         assert voltage > 0 : "voltage must be greater than 0";
         this.createNewRep();
         this.voltage = voltage;
+        this.setObject(0, voltage);
 
+    }
+
+    /**
+     *
+     * @param voltage
+     *            voltage
+     * @param wireCount
+     *            wires to add
+     *
+     *            Convenience Constructor
+     */
+    public ArrayCircuit(int voltage, int wireCount) {
+        assert voltage > 0 : "voltage must be greater than 0";
+        this.createNewRep();
+        this.voltage = voltage;
+        this.addWire(wireCount);
+        this.setObject(0, voltage);
     }
 
     @Override
@@ -129,6 +147,7 @@ public class ArrayCircuit extends CircuitSecondary {
 
     @Override
     public boolean identifyResistor(int pos) {
+        assert pos < this.rep.size() : "Error: Index out of Bounds";
 
         return this.getObject(pos) >= 50;
 

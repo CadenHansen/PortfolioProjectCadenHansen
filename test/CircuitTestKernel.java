@@ -10,9 +10,12 @@ import circuit.ArrayCircuit;
 public class CircuitTestKernel {
 
     /**
-     * Tests of getTotalCurrent()
+     * Tests of getTotalCurrent().
      */
 
+    /**
+     * Test of total current with standard voltage and a 60 ohm resistor.
+     */
     @Test
     public void testTotalCurrent5Volts60OhmResistor() {
 
@@ -25,11 +28,14 @@ public class CircuitTestKernel {
 
         double current = n.getTotalCurrent();
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(true, Math.abs((5 / 60) - current) > 0.01);
 
     }
 
+    /**
+     * Test of get total current with the lowest possible resistor value.
+     */
     @Test
     public void testTotalCurrentLowestPossibleResistance() {
 
@@ -42,7 +48,7 @@ public class CircuitTestKernel {
 
         double current = n.getTotalCurrent();
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(true, Math.abs((5 / 50) - current) > 0.01);
 
     }
@@ -51,24 +57,30 @@ public class CircuitTestKernel {
      * Tests of getStarterVoltage
      */
 
+    /**
+     * Test of getStarterVoltage with the default voltage out.
+     */
     @Test
     public void testGetStarterVoltageDefault() {
 
         ArrayCircuit n = new ArrayCircuit();
         ArrayCircuit nCopy = new ArrayCircuit(5);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(5, n.getStarterVoltage());
 
     }
 
+    /**
+     * Test of getStarterVoltage with a non normal starting voltage.
+     */
     @Test
     public void testGetStartVoltageModified() {
 
         ArrayCircuit n = new ArrayCircuit(12);
         ArrayCircuit nCopy = new ArrayCircuit(12);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(12, n.getStarterVoltage());
 
     }
@@ -77,6 +89,9 @@ public class CircuitTestKernel {
      * Tests of identifyResistor
      */
 
+    /**
+     * Test identifyResistor when object is a resistor.
+     */
     @Test
     public void testIdentifyResistorTrue() {
 
@@ -88,6 +103,9 @@ public class CircuitTestKernel {
 
     }
 
+    /**
+     * Test identifyResistor when object is not a resistor.
+     */
     @Test
     public void testIdentifyResistorFalse() {
 
@@ -102,6 +120,9 @@ public class CircuitTestKernel {
      * Tests of getObject
      */
 
+    /**
+     * test getObject when object is not a resistor.
+     */
     @Test
     public void testGetObjectNotResistor() {
 
@@ -110,11 +131,14 @@ public class CircuitTestKernel {
         n.addWire(4);
         nCopy.addWire(4);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(1, n.getObject(3));
 
     }
 
+    /**
+     * test of getObject when object is a resistor.
+     */
     @Test
     public void testGetObjectResistor() {
 
@@ -125,7 +149,7 @@ public class CircuitTestKernel {
         n.addResistor(3, 10000);
         nCopy.addResistor(3, 10000);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(10000, n.getObject(3));
 
     }
@@ -134,6 +158,9 @@ public class CircuitTestKernel {
      * Tests of addWire
      */
 
+    /**
+     * Test adding wire to circuit.
+     */
     @Test
     public void testAddWireLength5() {
 
@@ -142,11 +169,14 @@ public class CircuitTestKernel {
         n.addWire(5);
         nCopy.addWire(5);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(6, n.length());
 
     }
 
+    /**
+     * Test of adding a longer wire to Circuit.
+     */
     @Test
     public void testAddWireLength10() {
 
@@ -155,7 +185,7 @@ public class CircuitTestKernel {
         n.addWire(10);
         nCopy.addWire(10);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(11, n.length());
 
     }
@@ -164,6 +194,9 @@ public class CircuitTestKernel {
      * Tests of setObject
      */
 
+    /**
+     * Test of setting an object to a resistor.
+     */
     @Test
     public void testSetObjectToResistor() {
 
@@ -175,12 +208,15 @@ public class CircuitTestKernel {
         nCopy.addResistor(3, 80);
         n.setObject(3, 80);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(true, n.identifyResistor(3));
         assertEquals(80, n.getObject(3));
 
     }
 
+    /**
+     * Test of setting object back to a wire.
+     */
     @Test
     public void testSetObjectNonResistor() {
 
@@ -191,7 +227,7 @@ public class CircuitTestKernel {
         n.addResistor(3, 70);
         n.setObject(3, 1);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(false, n.identifyResistor(3));
         assertEquals(1, n.getObject(3));
 
@@ -201,6 +237,9 @@ public class CircuitTestKernel {
      * Tests of length
      */
 
+    /**
+     * Test of length when non starting length.
+     */
     @Test
     public void testLength5() {
 
@@ -209,21 +248,54 @@ public class CircuitTestKernel {
         n.addWire(5);
         nCopy.addWire(5);
 
-        assertEquals(true, n.equals(nCopy));
+        assertEquals(n, nCopy);
         assertEquals(6, n.length());
 
     }
 
+    /**
+     * Tests of length when standard length.
+     */
     @Test
-    public void testLength10() {
+    public void testLengthDefault() {
 
         ArrayCircuit n = new ArrayCircuit();
         ArrayCircuit nCopy = new ArrayCircuit();
-        n.addWire(10);
-        nCopy.addWire(10);
 
-        assertEquals(true, n.equals(nCopy));
-        assertEquals(11, n.length());
+        assertEquals(n, nCopy);
+        assertEquals(1, n.length());
+
+    }
+
+    /**
+     * Test of transferFrom
+     */
+    @Test
+    public void testTransferFrom() {
+
+        ArrayCircuit w = new ArrayCircuit(12);
+        ArrayCircuit x = new ArrayCircuit(12);
+        ArrayCircuit y = new ArrayCircuit();
+        ArrayCircuit z = new ArrayCircuit();
+        y.transferFrom(x);
+
+        assertEquals(x, z);
+        assertEquals(y, w);
+
+    }
+
+    /**
+     * Test of clear.
+     */
+    @Test
+    public void testClear() {
+
+        ArrayCircuit x = new ArrayCircuit();
+        ArrayCircuit y = new ArrayCircuit(6);
+
+        y.clear();
+
+        assertEquals(x, y);
 
     }
 }
