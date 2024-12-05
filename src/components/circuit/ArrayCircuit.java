@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 import java.util.ArrayList;
 
@@ -147,9 +147,9 @@ public class ArrayCircuit extends CircuitSecondary {
 
     @Override
     public boolean identifyResistor(int pos) {
-        assert pos < this.rep.size() : "Error: Index out of Bounds";
+        assert pos < this.length() : "Error: Index out of Bounds";
 
-        return this.getObject(pos) >= 50;
+        return (this.getObject(pos) >= 50);
 
     }
 

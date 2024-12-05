@@ -1,8 +1,8 @@
+package components.circuit;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import circuit.ArrayCircuit;
 
 /**
  * Tests for Circuit Kernel Methods

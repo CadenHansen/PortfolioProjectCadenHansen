@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 /**
  * Seconday methods.
@@ -39,23 +39,23 @@ public abstract class CircuitSecondary implements Circuit {
      */
     @Override
     public double getVoltage(int x, int y) {
-        assert x > 0 && y < this.length() : "No Objects at Specified Points";
 
         double voltage = this.getStarterVoltage();
         double current = this.getTotalCurrent();
         int resistorsChecked = 1;
 
-        for (int i = x; x < y; i++) {
+        while (x < y) {
 
-            if (resistorsChecked > 1 && i < this.length()) {
-                current = voltage / this.getObject(i);
+            if (resistorsChecked > 1 && x < this.length()) {
+                current = voltage / this.getObject(x);
             }
 
-            if (this.identifyResistor(i)) {
-                double voltageDrop = this.getObject(i) * current;
+            if (this.identifyResistor(x)) {
+                double voltageDrop = this.getObject(x) * current;
                 voltage -= voltageDrop;
                 resistorsChecked++;
             }
+            x = x + 1;
         }
 
         return voltage;

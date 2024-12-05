@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 /**
  * {@Code Circuit} enhanced with secondary methods.

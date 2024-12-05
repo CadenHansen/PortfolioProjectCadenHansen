@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import circuit.ArrayCircuit;
+import components.circuit.ArrayCircuit;
 
 /**
  * This exmample use case shows how a circuit object can be modified to

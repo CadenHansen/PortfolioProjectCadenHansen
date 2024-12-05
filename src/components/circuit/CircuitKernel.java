@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 import components.standard.Standard;
 

@@ -1,8 +1,8 @@
+package components.circuit;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import circuit.ArrayCircuit;
 
 /**
  * Testing Class for each method of the Circuit Object
@@ -133,7 +133,7 @@ public class CircuitTestAbstract {
 
         ArrayCircuit x = new ArrayCircuit(12, 5);
         x.addResistor(1, 500);
-        ArrayCircuit y = new ArrayCircuit();
+        ArrayCircuit y = new ArrayCircuit(12, 5);
         x.removeObject(1);
 
         assertEquals(x, y);
