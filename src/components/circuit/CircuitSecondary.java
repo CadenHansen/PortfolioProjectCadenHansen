@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 /**
  * Seconday methods.
@@ -20,7 +20,7 @@ public abstract class CircuitSecondary implements Circuit {
     public double voltageDivide(Circuit x, Circuit y) {
 
         double resistance1 = x.getTotalResistance();
-        double resistance2 = x.getTotalResistance();
+        double resistance2 = y.getTotalResistance();
 
         return this.getStarterVoltage()
                 * (resistance1 / (resistance1 + resistance2));
@@ -44,17 +44,18 @@ public abstract class CircuitSecondary implements Circuit {
         double current = this.getTotalCurrent();
         int resistorsChecked = 1;
 
-        for (int i = x; x < y; i++) {
+        while (x < y) {
 
-            if (resistorsChecked > 1) {
-                current = voltage / this.getObject(i);
+            if (resistorsChecked > 1 && x < this.length()) {
+                current = voltage / this.getObject(x);
             }
 
-            if (this.identifyResistor(i)) {
-                double voltageDrop = this.getObject(i) * current;
+            if (this.identifyResistor(x)) {
+                double voltageDrop = this.getObject(x) * current;
                 voltage -= voltageDrop;
                 resistorsChecked++;
             }
+            x = x + 1;
         }
 
         return voltage;
@@ -109,6 +110,8 @@ public abstract class CircuitSecondary implements Circuit {
     @Override
     public double emulateComparator(Circuit x, Circuit y, double voltage1,
             double voltage2) {
+        assert x.getStarterVoltage() != y
+                .getStarterVoltage() : "Comparators with same input cause hysteresis";
 
         double voltage = 0;
 
@@ -125,26 +128,31 @@ public abstract class CircuitSecondary implements Circuit {
     /**
      * Checks if this and x are equal to eachother.
      *
-     * @param x
+     * @param o
      *            Circuit this is being compared to
      *
      * @ensures this = this
      * @return true/false depending on if equal
      */
     @Override
-    public boolean equals(Circuit x) {
+    public boolean equals(Object o) {
 
-        boolean equal = true;
-
-        for (int i = 0; i < this.length(); i++) {
-
-            if (this.getObject(i) != x.getObject(i)) {
-                equal = false;
-            }
-
+        if (o == null) {
+            return false;
         }
-
-        return equal;
+        if (!(o instanceof Circuit)) {
+            return false;
+        }
+        Circuit x = (Circuit) o;
+        if (this.length() != x.length()) {
+            return false;
+        }
+        for (int i = 0; i < this.length(); i++) {
+            if (this.getObject(i) != x.getObject(i)) {
+                return false;
+            }
+        }
+        return true;
 
     }
 
@@ -163,6 +171,11 @@ public abstract class CircuitSecondary implements Circuit {
         for (int i = 0; i < this.length(); i++) {
 
             objectAsString += this.getObject(i);
+            if (i == this.length() - 1) {
+                objectAsString += "-END";
+            } else {
+                objectAsString += "-";
+            }
 
         }
 

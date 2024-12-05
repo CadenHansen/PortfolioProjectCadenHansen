@@ -101,6 +101,16 @@ Added methods to kernel and secondary for circuit component
 
 designed abstract class for circuit component
 
+## [2024.11.15]
+
+## Added
+
+kernel implementation for circuit componenent
+
+## [2024.12.4]
+
+designed example uses and test cases for circuit component
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07

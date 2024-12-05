@@ -112,7 +112,13 @@ do good work.
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+ArrayList<Integer>, this model allows me to make a circuit that is can be expanded
+as the person using the client desires. Its methods are useful for a simple
+implementation that can be understood, such as add and set, allowing the client to
+easily adjust whats inside of the circuit. these methods make it easy to follow the
+convention and correspondance as well. get() allows me to easily look at everything
+within the arraylist and see if it follows the abstraction of whether an object is a
+resistor or not. for the same reason 1s representing a wire is easy to follow.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -133,8 +139,6 @@ do good work.
 > to see them. If you don't like this workflow, you may try following the
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
-
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 
