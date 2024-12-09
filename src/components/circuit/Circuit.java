@@ -1,4 +1,4 @@
-package circuit;
+package components.circuit;
 
 /**
  * {@Code Circuit} enhanced with secondary methods.
@@ -83,7 +83,8 @@ public interface Circuit extends CircuitKernel {
      * @ensures this = this
      * @return true/false depending on if equal
      */
-    boolean equals(Circuit x);
+    @Override
+    boolean equals(Object o);
 
     /**
      * Creates a string representation of this.
